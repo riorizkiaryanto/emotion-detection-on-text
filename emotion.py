@@ -177,12 +177,10 @@ try:
 
     # connect to mysql db
     mydb = mysql.connector.connect(
-        host="localhost",
-        # port="8081",
-        # unix_socket = 'localhost:/Applications/MAMP/tmp/mysql/mysql.sock',
-        user="rio",
-        passwd="riodb",
-        database="twitterdb",
+        host=credential.db_host,
+        user=credential.db_user,
+        passwd=credential.db_pass,
+        database=credential.db_database,
         charset='utf8'
     )
     if mydb.is_connected():
